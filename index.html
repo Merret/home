@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Merret Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="icon.png">
+    <link rel="Shortcut Icon" type="image/x-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Merret Homepage">
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/element.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.4.2/js/xhr.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        @charset "UTF-8";
+        a {
+            color: deepskyblue;
+            text-decoration: none;
+        }
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+        a:visited {
+            color: deepskyblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body style="text-align: center; font-family: Arial, Helvetica; background-color: #f1f1f1;">
+    <div style="position: relative; top: 25%;">
+        <h2>Merret Homepage</h2>
+        <input type="text" id="searchItem" style="min-width:50%; max-width:75%; padding: 4px; border: 0; font-size: 24px; border-radius: 8px" placeholder="Search something..." onkeypress="if (event.keyCode==13&&this.value){elm.id('searchBtn').click(); event.preventDefault();}">
+        <button id="searchBtn" style="max-width:50%; font-size: 24px; border:none; color:#fff; background-color:#2196F3; padding: 4px; border-radius: 8px" onclick="javascript:location.href='https://www.google.com.tw/search?q='+elm.id('searchItem').value">Search!</button>
+    </div>
+    <div style="position:fixed; bottom: 2%; left: 2%; width: 2%; border-radius: 50%; background-color: white; padding: 1%; font-size: 1.4rem;"><i class="fas fa-chevron-up"></i></div>
+    <div style="position:fixed; bottom: 2%; right: 2%; width: 2%; border-radius: 50%; background-color: white; padding: 1%; font-size: 1.4rem;"><i class="fas fa-chevron-left"></i></div>
+    <div style="position:fixed; top: -0.5%; left: -0.5%; border-style: solid; border-width: 0 1px 1px 0; padding: 5px 10px; border-radius: 10%; font-size: 1.4rem;">
+        <span id="weatherIcon"></span>
+        <span id="weatherTemp"></span>
+        <span> id="weatherDrop"</span>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
