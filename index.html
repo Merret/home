@@ -66,7 +66,7 @@
         for(var i = 0; i < weatherData.records.location[0].weatherElement.length; i++) {
             if(weatherData.records.location[0].weatherElement[i].elementName == "MaxT") {
                 var n = weatherData.records.location[0].weatherElement[i];
-                AvgT = parseInt((AvgT + n.time[0].parameter.parameterName)/2);
+                AvgT = parseInt((AvgT + parseInt(n.time[0].parameter.parameterName))/2);
                 RanT += n.time[0].parameter.parameterName;
                 break;
             }
