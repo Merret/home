@@ -73,6 +73,13 @@
         }
         elm.id("weatherTemp").innerHTML = AvgT+"°C";
         elm.id("weatherTemp").title = RanT;
+        for(var i = 0; i < weatherData.records.location[0].weatherElement.length; i++) {
+            if(weatherData.records.location[0].weatherElement[i].elementName == "PoP") {
+                var n = weatherData.records.location[0].weatherElement[i];
+                elm.id("weatherDrop").innerHTML = n.time[0].parameter.parameterName + "%";
+                break;
+            }
+        }
     </script>
 </body>
 </html>
