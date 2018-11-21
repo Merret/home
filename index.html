@@ -54,6 +54,19 @@
             }
             elm.id("weatherIcon").title = n.time[0].parameter.parameterName;
         }
+        var AvgT, RanT;
+        for(var i = 0; weatherData.records.location[0].weatherElement[i].elementName == "MinT"; i++) {
+            var n = weatherData.records.location[0].weatherElement[i];
+            AvgT = n.time[0].parameter.parameterName;
+            RanT = n.time[0].parameter.parameterName + " ~ ";
+        }
+        for(var i = 0; weatherData.records.location[0].weatherElement[i].elementName == "MaxT"; i++) {
+            var n = weatherData.records.location[0].weatherElement[i];
+            AvgT = parseInt((AvgT + n.time[0].parameter.parameterName)/2);
+            RanT += n.time[0].parameter.parameterName;
+        }
+        elm.id("weatherTemp").innerHTML = AvgT;
+        elm.id("weatherTemp").title = RanT;
     </script>
 </body>
 </html>
