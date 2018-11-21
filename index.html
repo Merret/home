@@ -59,7 +59,7 @@
             if(weatherData.records.location[0].weatherElement[i].elementName == "MinT") {
                 var n = weatherData.records.location[0].weatherElement[i];
                 AvgT = parseInt(n.time[0].parameter.parameterName);
-                RanT = n.time[0].parameter.parameterName + " ~ ";
+                RanT = n.time[0].parameter.parameterName + "°C ~ ";
                 break;
             }
         }
@@ -67,11 +67,11 @@
             if(weatherData.records.location[0].weatherElement[i].elementName == "MaxT") {
                 var n = weatherData.records.location[0].weatherElement[i];
                 AvgT = parseInt((AvgT + parseInt(n.time[0].parameter.parameterName))/2);
-                RanT += n.time[0].parameter.parameterName;
+                RanT += n.time[0].parameter.parameterName + "°C";
                 break;
             }
         }
-        elm.id("weatherTemp").innerHTML = AvgT;
+        elm.id("weatherTemp").innerHTML = AvgT+"°C";
         elm.id("weatherTemp").title = RanT;
     </script>
 </body>
