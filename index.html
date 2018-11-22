@@ -59,6 +59,7 @@
             if(weatherData.records.location[0].weatherElement[i].elementName == "PoP") {
                 var n = weatherData.records.location[0].weatherElement[i];
                 elm.id("weatherDrop").innerHTML = n.time[0].parameter.parameterName + "%";
+                elm.id("weatherDrop").title = "降雨機率" + n.time[0].parameter.parameterName + "%";
                 break;
             }
         }
