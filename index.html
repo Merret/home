@@ -32,7 +32,7 @@
 <body style="text-align: center; font-family: Arial, Helvetica; background-color: #f1f1f1;">
     <div style="position: relative; top: 25%;">
         <h2>Merret Homepage</h2>
-        <input type="text" id="searchItem" style="min-width: 50%; max-width: 75%; padding: 4px; border: 0; font-size: 24px; border-radius: 8px" placeholder="Search something..." onkeypress="if (event.keyCode==13&&this.value){elm.id('searchBtn').click(); event.preventDefault();}">
+        <input type="text" id="searchItem" style="min-width: 50%; max-width: 75%; padding: 4px; border: 0; font-size: 24px; border-radius: 8px" placeholder="Search something..." onkeypress="if (event.keyCode==13&&this.value){elm.id('searchBtn').click();}" onkeyup="searchUp()">
         <button id="searchBtn" style="max-width:50%; font-size: 24px; border:none; color:#fff; background-color:#2196F3; padding: 4px; border-radius: 8px" onclick="javascript:if(elm.id('searchItem').value!=''){location.href='https://www.google.com.tw/search?q='+elm.id('searchItem').value}">Search!</button>
     </div>
     <a id="wikiLink" style="color: black"><div id="wikiPre" style="position: fixed; background-color: white; border-radius: 0.5rem; top: 0%; margin:  2% 18%; padding: 0.5rem 3%; max-height: 20%; z-index: 2; display: none" onload="this.style.width=elm.id('searchBlock').style.width"></div></a>
