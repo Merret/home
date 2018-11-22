@@ -35,7 +35,10 @@
         <input type="text" id="searchItem" style="min-width: 50%; max-width: 75%; padding: 4px; border: 0; font-size: 24px; border-radius: 8px" placeholder="Search something..." onkeypress="if (event.keyCode==13&&this.value){elm.id('searchBtn').click();}" onkeyup="searchUp()">
         <button id="searchBtn" style="max-width:50%; font-size: 24px; border:none; color:#fff; background-color:#2196F3; padding: 4px; border-radius: 8px" onclick="javascript:if(elm.id('searchItem').value!=''){location.href='https://www.google.com.tw/search?q='+elm.id('searchItem').value}">Search!</button>
     </div>
-    <a id="wikiLink" style="color: black"><div id="wikiPre" style="position: fixed; background-color: white; border-radius: 0.5rem; top: 0%; margin:  2% 18%; padding: 0.5rem 3%; max-height: 20%; z-index: 2; display: none" onload="this.style.width=elm.id('searchBlock').style.width"></div></a>
+    <a id="wikiLink" style="color: black">
+        <div id="wikiPre" style="position: fixed; background-color: white; border-radius: 0.5rem; top: 0%; margin:  2% 18%; padding: 0.5rem 3%; max-height: 20%; z-index: 2; overflow: auto; display: none" onload="this.style.width=elm.id('searchBlock').style.width">
+        </div>
+    </a>
     
     <div style="position:fixed; bottom: 2%; left: 2%; width: 2rem; height: 2rem; border-radius: 50%; background-color: white; padding: 1%; font-size: 1.4rem;"><i class="fas fa-chevron-up" style="margin: 0.3rem 0"></i></div>
     <div style="position:fixed; bottom: 2%; right: 2%; width: 2rem; height: 2rem; border-radius: 50%; background-color: white; padding: 1%; font-size: 1.4rem;"><i class="fas fa-chevron-left" style="margin: 0.3rem 0"></i></div>
