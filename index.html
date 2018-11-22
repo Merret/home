@@ -93,11 +93,11 @@
             }
         }
         function moreWeather() {
-            if(elm.id("weatherMore")["data-fa-transform"] != "flip-h") {
-                elm.id("weatherMore")["data-fa-transform"] = "flip-h";
+            if(elm.id("weatherMore").className != "fas fa-caret-left") {
+                elm.id("weatherMore").className = "fas fa-caret-left";
                 elm.id("weatherUVI").style.display = "";
             } else {
-                elm.id("weatherMore")["data-fa-transform"] = "";
+                elm.id("weatherMore").className = "fas fa-caret-right";
                 elm.id("weatherUVI").style.display = "none";
             }
         }
