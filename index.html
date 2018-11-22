@@ -73,10 +73,10 @@
             }
         }
         function moreWeather() {
-            if(elm.id("weatherMore").data-fa-transform=="flip-h") {
-                elm.id("weatherMore").data-fa-transform="flip-h";
+            if(elm.id("weatherMore")["data-fa-transform"] != "flip-h") {
+                elm.id("weatherMore")["data-fa-transform"] = "flip-h";
             } else {
-                elm.id("weatherMore").data-fa-transform="";
+                elm.id("weatherMore")["data-fa-transform"] = "";
             }
         }
     </script>
