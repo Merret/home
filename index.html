@@ -40,6 +40,7 @@
         <span id="weatherIcon"></span>
         <span id="weatherTemp"></span>
         <span id="weatherDrop"></span>
+        <i class="fas fa-caret-right"></i>
     </div>
     <script>
         var weatherData = JSON.parse(xhr.get("https://co-co.tk/test/cwb.php"));
@@ -65,8 +66,8 @@
         for(var i = 0; i < wDTaipei.records.location[0].weatherElement.length; i++) {
             if(wDTaipei.records.location[0].weatherElement[i].elementName == "TEMP") {
                 var n = wDTaipei.records.location[0].weatherElement[i];
-                elm.id("weatherTemp").innerHTML = n.elementValue + "°C";
-                elm.id("weatherTemp").title = "現在溫度" + n.elementValue + "°C";
+                elm.id("weatherTemp").innerHTML = parseInt(n.elementValue) + "°C";
+                elm.id("weatherTemp").title = "現在溫度" + parseInt(n.elementValue) + "°C";
                 break;
             }
         }
