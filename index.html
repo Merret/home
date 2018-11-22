@@ -73,6 +73,25 @@
                 break;
             }
         }
+        for(var i = 0; i < wDTaipei.records.location[0].weatherElement.length; i++) {
+            if(wDTaipei.records.location[0].weatherElement[i].elementName == "H_UVI") {
+                var n = wDTaipei.records.location[0].weatherElement[i];
+                elm.id("weatherUVI").innerHTML = "UVI " + n.elementValue;
+                elm.id("weatherUVI").title = "紫外線指數" + n.elementValue + "級";
+                if(n.elementValue >= 10) {
+                    elm.id("weatherUVI").style.color = "purple";
+                } else if(n.elementValue >= 7) {
+                    elm.id("weatherUVI").style.color = "red";
+                } else if(n.elementValue >= 5) {
+                    elm.id("weatherUVI").style.color = "orange";
+                } else if(n.elementValue >= 3) {
+                    elm.id("weatherUVI").style.color = "yellow";
+                } else {
+                    elm.id("weatherUVI").style.color = "green";
+                }
+                break;
+            }
+        }
         function moreWeather() {
             if(elm.id("weatherMore")["data-fa-transform"] != "flip-h") {
                 elm.id("weatherMore")["data-fa-transform"] = "flip-h";
