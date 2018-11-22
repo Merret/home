@@ -40,7 +40,7 @@
         <span id="weatherIcon"></span>
         <span id="weatherTemp"></span>
         <span id="weatherDrop"></span>
-        <i class="fas fa-caret-right"></i>
+        <i id="weatherMore" class="fas fa-caret-right" onclick="moreWeather()"></i>
     </div>
     <script>
         var weatherData = JSON.parse(xhr.get("https://co-co.tk/test/cwb.php"));
@@ -71,6 +71,12 @@
                 break;
             }
         }
+        function moreWeather() {
+            if(elm.id("weatherMore").data-fa-transform=="flip-h") {
+                elm.id("weatherMore").data-fa-transform="flip-h";
+            } else {
+                elm.id("weatherMore").data-fa-transform="";
+            }
     </script>
 </body>
 </html>
