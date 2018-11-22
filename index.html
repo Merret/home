@@ -54,29 +54,19 @@
             }
             elm.id("weatherIcon").title = n.time[0].parameter.parameterName;
         }
-        var AvgT, RanT;
-        for(var i = 0; i < weatherData.records.location[0].weatherElement.length; i++) {
-            if(weatherData.records.location[0].weatherElement[i].elementName == "MinT") {
-                var n = weatherData.records.location[0].weatherElement[i];
-                AvgT = parseInt(n.time[0].parameter.parameterName);
-                RanT = n.time[0].parameter.parameterName + "°C ~ ";
-                break;
-            }
-        }
-        for(var i = 0; i < weatherData.records.location[0].weatherElement.length; i++) {
-            if(weatherData.records.location[0].weatherElement[i].elementName == "MaxT") {
-                var n = weatherData.records.location[0].weatherElement[i];
-                AvgT = parseInt((AvgT + parseInt(n.time[0].parameter.parameterName))/2);
-                RanT += n.time[0].parameter.parameterName + "°C";
-                break;
-            }
-        }
-        elm.id("weatherTemp").innerHTML = AvgT+"°C";
-        elm.id("weatherTemp").title = RanT;
         for(var i = 0; i < weatherData.records.location[0].weatherElement.length; i++) {
             if(weatherData.records.location[0].weatherElement[i].elementName == "PoP") {
                 var n = weatherData.records.location[0].weatherElement[i];
                 elm.id("weatherDrop").innerHTML = n.time[0].parameter.parameterName + "%";
+                break;
+            }
+        }
+        var wDTaipei = JSON.parse(xhr.get("https://co-co.tk/test/cors.php?url=https%3A%2F%2Fopendata.cwb.gov.tw%2Fapi%2Fv1%2Frest%2Fdatastore%2FO-A0003-001%3FAuthorization%3DCWB-32C02D9E-DEB3-4D3A-807A-7B2C816EB21C%26locationName%3D%E8%87%BA%E5%8C%97%26parameterName%3DCITY"));
+        for(var i = 0; i < wDTaipei.records.location[0].weatherElement.length; i++) {
+            if(wDTaipei.records.location[0].weatherElement[i].elementName == "TEMP") {
+                var n = wDTaipei.records.location[0].weatherElement[i];
+                elm.id("weatherTemp").innerHTML = n.elementValue + "°C";
+                elm.id("weatherTemp").title = "現在溫度" + n.elementValue + "°C";
                 break;
             }
         }
